@@ -1,0 +1,9 @@
+[theme]
+base="dark"
+
+# can do this as well
+# [theme]
+# primaryColor='hexcode'
+# backgroundColor='hexcode
+# textColor='hexcode'
+# font='font name (sans serif)'
