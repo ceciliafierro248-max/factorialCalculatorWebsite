@@ -116,11 +116,11 @@ if userInput == "" and attempts > 5:
     st.text("")
     st.text("You have run out of tries")
 
-if userInput == "":
+if userInput == "" and attempts < 5:
     st.text("")
-    st.text("Type a number. You have " + tries + " tries left")
+    st.text("Type a number. You have " + tries + " tries left.")
     st.session_state.attempts = st.session_state.attempts + 1
-    st.text("You have used " + str(attempts) + " attempts.")
+    st.text("You have used " + str(attempts) + " attempt(s).")
 
 else:
     if attempts > 5:
@@ -135,21 +135,19 @@ else:
             answer = factorial(number)
             st.session_state.attempts = st.session_state.attempts + 1
             st.text("You answer is " + str(answer) + ". Type in a number, you have " + tries + " left.")
-            st.text("You have used " + str(attempts) + " attempts.")
-            st.text(attempts)
+            st.text("You have used " + str(attempts) + " attempt(s).")
 
         except ValueError:
             st.text("")
             st.text("Uh oh! You tried to type in " + userInput + ", which is a string (aka letters) or a decimal value. Please type in an integer value.")
             st.session_state.attempts = st.session_state.attempts + 1
             st.text("You have " + tries + " left.")
-            st.text("You have used " + str(attempts) + " attempts.")
+            st.text("You have used " + str(attempts) + " attempt(s).")
 
         except RecursionError:
             st.text("")
             st.text("Uh oh! You tried to type in " + userInput + ", which is too large for the calculator to handle. Please type in a smaller integer value.")
             st.session_state.attempts  = st.session_state.attempts + 1
             st.text("You have " + tries + " left.")
-            st.text("You have used" + str(attempts) + " attempts.")
-
+            st.text("You have used " + str(attempts) + " attempt(s).")
 
